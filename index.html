@@ -1007,6 +1007,50 @@
       });
     });
   </script>
+<script>
+const WORKER_URL = "https://tariki-proxy.ougha-didou.workers.dev/";
 
+async function loadAlerts() {
+  const res = await fetch(WORKER_URL);
+  const txt = await res.text();
+  const xml = new DOMParser().parseFromString(txt, "application/xml");
+
+  xml.querySelectorAll("marker").forEach(m => {
+    const lat   = parseFloat(m.getAttribute("lat"));
+    const lng   = parseFloat(m.getAttribute("lng"));
+    const type  = m.getAttribute("type");
+    const color = m.getAttribute("color");
+    const desc  = m.getAttribute("desc");
+    const road  = m.getAttribute("road");
+    const wilaya= m.getAttribute("wilaya");
+    const time  = m.getAttribute("time");
+
+    // أيقونة من tariki.dz
+    const icon = L.icon({
+      iconUrl:    `https://tariki.dz/images/${type}.png`,
+      iconSize:   [32, 32],
+      iconAnchor: [16, 32],
+      popupAnchor:[0, -32]
+    });
+
+    L.marker([lat, lng], { icon })
+      .addTo(map)
+      .bindPopup(`
+        <div dir="rtl" style="font-family:Cairo,sans-serif;min-width:200px">
+          <div style="background:${color};color:#fff;padding:6px 12px;
+                      border-radius:8px;font-weight:700;margin-bottom:8px">
+            🛣️ ${road}
+          </div>
+          <p style="margin:4px 0">${desc}</p>
+          <small style="color:#64748B">📍 ${wilaya} &nbsp;|&nbsp; 🕐 ${time}</small>
+        </div>
+      `);
+  });
+}
+
+// تحميل فوري + تحديث كل 5 دقائق
+loadAlerts();
+setInterval(loadAlerts, 5 * 60 * 1000);
+</script>
 </body>
 </html>
