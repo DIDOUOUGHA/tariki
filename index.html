@@ -592,6 +592,62 @@
   </style>
 </head>
 <body>
+<!-- ===== بانر تنبيه غير رسمي ===== -->
+<div id="unofficial-banner" style="
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 99999;
+  background: linear-gradient(135deg, #1e3a5f, #2563eb);
+  color: #fff;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: 'Cairo', sans-serif;
+  font-size: 13px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.3);
+  direction: rtl;
+">
+  <div style="display:flex; align-items:center; gap:10px; flex:1; justify-content:center">
+    <span style="font-size:18px">⚠️</span>
+    <span>
+      هذا الموقع <strong>ليس الموقع الرسمي</strong> لطريقي —
+      هو مجرد <strong>محاولة تطوعية لإعادة التصميم</strong>.
+      للموقع الرسمي زر
+      <a href="https://tariki.dz" target="_blank"
+        style="color:#93c5fd; font-weight:700; text-decoration:underline">
+        tariki.dz
+      </a>
+    </span>
+    <span style="font-size:18px">⚠️</span>
+  </div>
+  <button onclick="document.getElementById('unofficial-banner').style.display='none'"
+    style="
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.3);
+      color: #fff;
+      border-radius: 6px;
+      padding: 3px 10px;
+      cursor: pointer;
+      font-size: 12px;
+      white-space: nowrap;
+      margin-right: 10px;
+    ">
+    ✕ إغلاق
+  </button>
+</div>
+
+<!-- دفع المحتوى للأسفل بمقدار ارتفاع البانر -->
+<div id="banner-spacer" style="height: 42px"></div>
+
+<script>
+  // إخفاء المسافة عند إغلاق البانر
+  document.querySelector('#unofficial-banner button')
+    .addEventListener('click', () => {
+      document.getElementById('banner-spacer').style.display = 'none';
+    });
+</script>
+<!-- ===== نهاية البانر ===== -->
 
   <!-- ① NAVBAR -->
   <nav class="navbar" role="navigation" aria-label="القائمة الرئيسية">
