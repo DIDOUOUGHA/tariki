@@ -1032,8 +1032,45 @@ async function loadAlerts() {
       iconAnchor: [16, 32],
       popupAnchor:[0, -32]
     });
+    function getIcon(type, color) {
+  const icons = {
+    accident:      "🚨",
+    travaux:       "🚧",
+    neige:         "❄️",
+    glissant:      "⚠️",
+    pluie:         "🌧️",
+    inondation:    "🌊",
+    vent:          "💨",
+    chute:         "🪨",
+    verglas:       "🧊",
+    manifestation: "🚫",
+    eclairage:     "💡",
+    degradee:      "🛣️",
+    chameaux:      "🐪",
+    attention:     "⚠️"
+  };
 
-    L.marker([lat, lng], { icon })
+  const emoji = icons[type] || "📍";
+
+  return L.divIcon({
+    html: `<div style="
+      background:${color};
+      width:36px; height:36px;
+      border-radius:50%;
+      border:3px solid white;
+      display:flex; align-items:center;
+      justify-content:center;
+      font-size:18px;
+      box-shadow:0 2px 8px rgba(0,0,0,0.4)">
+      ${emoji}
+    </div>`,
+    iconSize:   [36, 36],
+    iconAnchor: [18, 18],
+    className:  ""
+  });
+}
+
+    L.marker([lat, lng], { icon: getIcon(type, color) })
       .addTo(map)
       .bindPopup(`
         <div dir="rtl" style="font-family:Cairo,sans-serif;min-width:200px">
