@@ -1144,6 +1144,49 @@ async function loadAlerts() {
 // تحميل فوري + تحديث كل 5 دقائق
 loadAlerts();
 setInterval(loadAlerts, 5 * 60 * 1000);
+
+async function loadFacebookNews() {
+  const res  = await fetch("https://tariki-proxy.ougha-didou.workers.dev/news");
+  const data = await res.json();
+
+  const container = document.getElementById("alerts-list");
+  if (!data.items?.length) return;
+
+  container.innerHTML = data.items.slice(0, 8).map(item => {
+    const date    = new Date(item.date);
+    const timeAgo = getTimeAgo(date);
+    return `
+      <div style="
+        border-right: 4px solid #1a3c6e;
+        padding: 10px 14px; margin-bottom: 8px;
+        background: #f8fafc; border-radius: 6px;
+        direction: rtl; font-family: Cairo, sans-serif;
+      ">
+        <p style="margin:0 0 6px; font-size:13px; color:#1e293b; font-weight:600">
+          ${item.title.substring(0, 100)}...
+        </p>
+        <div style="display:flex; justify-content:space-between">
+          <small style="color:#64748b">🕐 ${timeAgo}</small>
+          <a href="${item.link}" target="_blank"
+            style="font-size:11px; color:#1a3c6e">
+            قراءة المزيد ←
+          </a>
+        </div>
+      </div>
+    `;
+  }).join("");
+}
+
+function getTimeAgo(date) {
+  const diff = Math.floor((Date.now() - date) / 1000);
+  if (diff < 3600)  return `منذ ${Math.floor(diff/60)} دقيقة`;
+  if (diff < 86400) return `منذ ${Math.floor(diff/3600)} ساعة`;
+  return `منذ ${Math.floor(diff/86400)} يوم`;
+}
+
+loadFacebookNews();
+setInterval(loadFacebookNews, 10 * 60 * 1000);
+
 </script>
 </body>
 </html>
