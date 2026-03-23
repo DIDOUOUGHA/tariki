@@ -924,36 +924,105 @@
   </section>
 
   <!-- ⑧ STATISTICS -->
-  <section class="stats-section" aria-label="إحصائيات السلامة المرورية">
-    <div class="section-inner">
-      <div class="section-header">
-        <h2 class="section-title">📊 إحصائيات السلامة المرورية</h2>
-        <span style="font-size:.82rem;color:var(--text-muted)">آخر تحديث: 2025</span>
-      </div>
-      <div class="stats-grid">
-        <div class="stat-card">
-          <div class="stat-card-icon">🚗</div>
-          <span class="stat-card-num">47,200</span>
-          <span class="stat-card-label">تدخل ميداني سنوياً</span>
-        </div>
-        <div class="stat-card">
-          <div class="stat-card-icon">📱</div>
-          <span class="stat-card-num">1.2M+</span>
-          <span class="stat-card-label">مستخدم التطبيق</span>
-        </div>
-        <div class="stat-card">
-          <div class="stat-card-icon">✅</div>
-          <span class="stat-card-num">98%</span>
-          <span class="stat-card-label">دقة التنبيهات</span>
-        </div>
-        <div class="stat-card">
-          <div class="stat-card-icon">⏱️</div>
-          <span class="stat-card-num">&lt; 8 دق</span>
-          <span class="stat-card-label">متوسط وقت الاستجابة</span>
-        </div>
-      </div>
+<!-- ⑧ STATISTICS -->
+<section class="stats-section" aria-label="إحصائيات السلامة المرورية">
+  <div class="section-inner">
+    <div class="section-header">
+      <h2 class="section-title">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+          style="vertical-align:middle;margin-left:8px"
+          xmlns="http://www.w3.org/2000/svg">
+          <rect x="3" y="12" width="4" height="9" rx="1" fill="#901818"/>
+          <rect x="10" y="7" width="4" height="14" rx="1" fill="#901818" opacity=".8"/>
+          <rect x="17" y="3" width="4" height="18" rx="1" fill="#901818" opacity=".6"/>
+        </svg>
+        إحصائيات السلامة المرورية
+      </h2>
+      <span style="font-size:.82rem;color:var(--text-muted)">آخر تحديث: 2025</span>
     </div>
-  </section>
+
+    <div class="stats-grid">
+
+      <!-- تدخل ميداني -->
+      <div class="stat-card">
+        <div class="stat-card-icon">
+          <svg width="40" height="40" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="24" cy="24" r="24" fill="#901818" opacity="0.1"/>
+            <path d="M10 30h2l2-8h16l2 8h2a1 1 0 0 1 0 2H10a1 1 0 0 1 0-2z" fill="#901818"/>
+            <rect x="13" y="30" width="4" height="3" rx="1.5" fill="#901818"/>
+            <rect x="31" y="30" width="4" height="3" rx="1.5" fill="#901818"/>
+            <path d="M14 22h20l-1.5-5a1 1 0 0 0-.96-.72H16.46a1 1 0 0 0-.96.72L14 22z" fill="#901818" opacity="0.6"/>
+            <circle cx="17" cy="32" r="2.5" fill="#1a3c6e"/>
+            <circle cx="31" cy="32" r="2.5" fill="#1a3c6e"/>
+            <circle cx="17" cy="32" r="1" fill="#fff"/>
+            <circle cx="31" cy="32" r="1" fill="#fff"/>
+          </svg>
+        </div>
+        <span class="stat-card-num">47,200</span>
+        <span class="stat-card-label">تدخل ميداني سنوياً</span>
+      </div>
+
+      <!-- مستخدمو التطبيق -->
+      <div class="stat-card">
+        <div class="stat-card-icon">
+          <svg width="40" height="40" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="24" cy="24" r="24" fill="#1a3c6e" opacity="0.1"/>
+            <rect x="16" y="8" width="16" height="32" rx="3" fill="#1a3c6e" opacity="0.2"/>
+            <rect x="17" y="9" width="14" height="30" rx="2.5" stroke="#1a3c6e" stroke-width="1.5" fill="none"/>
+            <rect x="19" y="12" width="10" height="18" rx="1" fill="#1a3c6e" opacity="0.3"/>
+            <circle cx="24" cy="34" r="1.5" fill="#1a3c6e"/>
+            <rect x="21" y="10.5" width="6" height="1" rx=".5" fill="#1a3c6e"/>
+            <!-- wifi signal on screen -->
+            <path d="M21 23 Q24 20 27 23" stroke="#1a3c6e" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+            <path d="M22.5 25.5 Q24 24 25.5 25.5" stroke="#1a3c6e" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+            <circle cx="24" cy="27.5" r="1" fill="#1a3c6e"/>
+          </svg>
+        </div>
+        <span class="stat-card-num">1.2M+</span>
+        <span class="stat-card-label">مستخدم التطبيق</span>
+      </div>
+
+      <!-- دقة التنبيهات -->
+      <div class="stat-card">
+        <div class="stat-card-icon">
+          <svg width="40" height="40" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="24" cy="24" r="24" fill="#16a34a" opacity="0.1"/>
+            <circle cx="24" cy="24" r="14" stroke="#16a34a" stroke-width="2" fill="none" opacity="0.3"/>
+            <circle cx="24" cy="24" r="9" stroke="#16a34a" stroke-width="2" fill="none" opacity="0.5"/>
+            <circle cx="24" cy="24" r="4" fill="#16a34a"/>
+            <path d="M17 24l4.5 4.5L31 18" stroke="#16a34a" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <span class="stat-card-num">98%</span>
+        <span class="stat-card-label">دقة التنبيهات</span>
+      </div>
+
+      <!-- وقت الاستجابة -->
+      <div class="stat-card">
+        <div class="stat-card-icon">
+          <svg width="40" height="40" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="24" cy="24" r="24" fill="#d97706" opacity="0.1"/>
+            <circle cx="24" cy="26" r="13" stroke="#d97706" stroke-width="2" fill="none"/>
+            <path d="M24 14v2M24 14v2" stroke="#d97706" stroke-width="2" stroke-linecap="round"/>
+            <!-- ساعة يد -->
+            <rect x="20" y="10" width="8" height="2.5" rx="1.25" fill="#d97706"/>
+            <!-- عقربان -->
+            <path d="M24 26 L24 19" stroke="#d97706" stroke-width="2.5" stroke-linecap="round"/>
+            <path d="M24 26 L29 28" stroke="#1a3c6e" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="24" cy="26" r="1.5" fill="#d97706"/>
+            <!-- علامات الساعة -->
+            <path d="M24 15.5v1.5M31.5 18.5l-1 1M34.5 26h-1.5M31.5 33.5l-1-1M24 36.5v-1.5M16.5 33.5l1-1M13.5 26h1.5M16.5 18.5l1 1"
+              stroke="#d97706" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
+          </svg>
+        </div>
+        <span class="stat-card-num">&lt; 8 دق</span>
+        <span class="stat-card-label">متوسط وقت الاستجابة</span>
+      </div>
+
+    </div>
+  </div>
+</section>
 
   <!-- ⑨ FOOTER — شعار الدرك هنا فقط -->
   <footer class="footer" role="contentinfo">
