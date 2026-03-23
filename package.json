@@ -1,0 +1,17 @@
+{
+  "name": "tariki-tariki.v1",
+  "version": "1.0.0",
+  "description": "<h1> Tariki Web site Redesign 🤞🏻</h1>",
+  "main": "index.js",
+  "scripts": {
+    "build": "npx @tailwindcss/cli -i ./src/input.css -o ./assets/css/style.css --minify",
+    "dev": "npx @tailwindcss/cli -i ./src/input.css -o ./assets/css/style.css --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.2.2",
+    "tailwindcss": "^4.2.2"
+  }
+}
